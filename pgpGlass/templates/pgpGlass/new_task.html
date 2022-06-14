@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,td{
+        border: 1px solid black;
+        padding-left: 25px;
+
+    }
+</style>
+
+<body>
+  
+    
+        {{ data.date }}
+   
+    <table  >
+        {% for data in data %}
+        <tr >
+            <form action="approvedByPerson1/{{data.id}}"  method="POST">
+                {{ csrf_toke }}
+                <td >{{data.id}}</td>
+                <td >{{data.loggedPerson}}</td>
+                <td>{{data.date}}</td>
+                <td>{{data.typeOfWork}}</td>
+                <td>{{data.numberOfPerson}}</td>
+                <td>{{data.startTime}}</td>
+                <td>{{data.endTime}}</td>
+                <td>{{data.location}}</td>
+                <td>{{data.equipment}}</td>
+                <td>{{data.toolRequired}}</td>
+                <td>{{data.workingAgency}}</td>
+                <td>{{data.workDescription}}</td>
+                <td>{{data.ppeRequired}}</td>
+                <td>{{data.person1}}</td>
+                <td>{{data.person2}}</td>
+                <td>{{data.typeOfWork}}</td>
+                <td>{{data.typeOfWork}}</td>
+                <td>{{data.typeOfWork}}</td>
+                <td><input type="submit" /></td>
+            </form>
+        </tr>
+       
+        {% endfor %}
+        
+
+    </table>
+    
+</body>
+</html>
